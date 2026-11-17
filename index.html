@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Travel YSS – Aman, Nyaman, Terpercaya</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Plus+Jakarta+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--red:#E10B17;--red-d:#B30810;--ink:#141414;--bg:#FFFFFF;--soft:#FFF4E0;--sky:#E7F3FF;--card:#FFFFFF;--line:#141414;--muted:#55555c;--sun:#FFC72C;
+--safe-t:env(safe-area-inset-top,0px);--safe-b:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15161a;--ink:#f5f5f7;--soft:#22201a;--sky:#1a2430;--card:#1e1f25;--line:#f5f5f7;--muted:#b4b4bc;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#15161a;--ink:#f5f5f7;--soft:#22201a;--sky:#1a2430;--card:#1e1f25;--line:#f5f5f7;--muted:#b4b4bc;color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:96px;height:auto}
+:root{padding-top:var(--safe-t);padding-bottom:var(--safe-b)}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.65 "Plus Jakarta Sans",system-ui,sans-serif}
+h1,h2,h3{font-family:"Baloo 2","Plus Jakarta Sans",sans-serif;line-height:1.1;margin:0}
+h1{font-size:clamp(2.6rem,7vw,4.8rem);font-weight:800;letter-spacing:-.01em}
+h2{font-size:clamp(1.9rem,4vw,2.8rem);font-weight:800}
+h3{font-size:1.3rem;font-weight:600}
+p{margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--sun);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+section{padding:84px 0}
+
+/* floating nav */
+nav{position:fixed;top:calc(12px + var(--safe-t));left:50%;transform:translateX(-50%);z-index:50;width:min(920px,calc(100% - 20px));
+background:var(--card);border:2.5px solid var(--line);border-radius:999px;box-shadow:0 5px 0 var(--line);display:flex;align-items:center;gap:6px;padding:6px 8px 6px 14px}
+.brand{font:800 1.25rem "Baloo 2",sans-serif;text-decoration:none;white-space:nowrap;display:flex;align-items:center;gap:8px}
+.brand i{display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font-style:normal;font-size:.7rem;border:2px solid var(--ink)}
+.links{display:flex;gap:2px;margin-left:auto;overflow-x:auto;scrollbar-width:none}
+.links::-webkit-scrollbar{display:none}
+.links a{text-decoration:none;font-weight:700;font-size:.9rem;padding:7px 13px;border-radius:999px;white-space:nowrap;transition:background .2s}
+.links a:hover{background:var(--soft)}
+.links a.on{background:var(--sun);color:#141414}
+.cta{background:var(--red);color:#fff!important}
+.links a.cta.on{background:var(--red-d)}
+@media(max-width:620px){.brand span{display:none}}
+
+/* hero */
+.hero{padding-top:140px;background:radial-gradient(circle at 85% 20%,var(--sun) 0 90px,transparent 91px),linear-gradient(180deg,var(--sky),var(--bg))}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.hero p.lead{font-size:1.15rem;margin:20px 0 28px;max-width:46ch;color:var(--muted)}
+.red{color:var(--red)}
+.btn{display:inline-block;font:700 1rem "Plus Jakarta Sans",sans-serif;text-decoration:none;padding:13px 24px;border-radius:14px;border:2.5px solid var(--line);box-shadow:0 4px 0 var(--line);cursor:pointer;transition:transform .12s,box-shadow .12s;background:var(--card);color:var(--ink)}
+.btn:hover{transform:translateY(2px);box-shadow:0 2px 0 var(--line)}
+.btn.pri{background:var(--red);color:#fff}
+.btns{display:flex;gap:14px;flex-wrap:wrap}
+.ticket{background:var(--card);border:3px solid var(--line);border-radius:18px;box-shadow:8px 8px 0 var(--red);padding:18px;transform:rotate(-2deg);animation:pop .7s cubic-bezier(.2,1.4,.4,1) both}
+@keyframes pop{from{transform:rotate(-9deg) scale(.85);opacity:0}}
+.ticket .top{display:flex;justify-content:space-between;align-items:center;border-bottom:3px solid var(--line);padding-bottom:10px;margin-bottom:12px}
+.ticket .top b{font:800 1.5rem "Baloo 2",sans-serif}
+.ticket .top small{color:var(--muted);font-weight:700}
+.row{display:grid;grid-template-columns:96px 1fr;gap:8px;align-items:center;margin-bottom:8px;font-size:.82rem;font-weight:700}
+.row span.v{border:2px solid var(--line);border-radius:6px;padding:4px 9px;min-height:30px;font-weight:500;font-size:.9rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ticket .note{font-size:.76rem;color:var(--muted);margin-top:10px;text-align:center}
+@media(max-width:820px){.hero .wrap{grid-template-columns:1fr}.ticket{max-width:420px}}
+
+/* sections */
+.head{max-width:560px;margin-bottom:38px}
+.head p{color:var(--muted);margin-top:10px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px}
+.card{background:var(--card);border:2.5px solid var(--line);border-radius:20px;padding:24px}
+.card:nth-child(1){box-shadow:6px 6px 0 var(--red)}
+.card:nth-child(2){box-shadow:6px 6px 0 var(--sun)}
+.card:nth-child(3){box-shadow:6px 6px 0 #4FB3FF}
+.card:nth-child(4){box-shadow:6px 6px 0 var(--ink)}
+.card .ic{font-size:2rem;display:block;margin-bottom:8px}
+.card p{color:var(--muted);margin-top:8px;font-size:.95rem}
+.alt{background:var(--soft)}
+.fleet{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:center}
+.car{background:var(--card);border:3px solid var(--line);border-radius:24px;padding:20px 20px 8px}
+.car svg{width:100%;height:auto;display:block}
+.specs{list-style:none;padding:0;margin:20px 0 0;display:grid;gap:10px}
+.specs li{display:flex;gap:10px;align-items:flex-start}
+.specs li:before{content:"✔";background:var(--red);color:#fff;border-radius:50%;width:24px;height:24px;flex:none;display:grid;place-items:center;font-size:.75rem;margin-top:2px}
+@media(max-width:760px){.fleet{grid-template-columns:1fr}}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px;counter-reset:s}
+.step{position:relative;padding:22px 20px 20px;background:var(--card);border:2.5px solid var(--line);border-radius:18px;counter-increment:s}
+.step:before{content:counter(s);position:absolute;top:-16px;left:18px;width:34px;height:34px;border-radius:50%;background:var(--sun);color:#141414;border:2.5px solid var(--line);display:grid;place-items:center;font:800 1rem "Baloo 2",sans-serif}
+.step p{color:var(--muted);font-size:.93rem;margin-top:4px}
+
+.sub{font-size:1.5rem;margin:50px 0 16px}
+.veh{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px}
+.veh div{background:var(--card);border:2.5px solid var(--line);border-radius:16px;padding:16px 12px;text-align:center;font-weight:700}
+.veh span{display:block;font-size:2rem}
+.veh small{display:block;font-weight:400;color:var(--muted);font-size:.8rem;line-height:1.4;margin-top:4px}
+.sky{background:var(--sky)}
+.badge{display:inline-block;background:var(--sun);color:#141414;border:2.5px solid var(--line);border-radius:999px;padding:3px 14px;font-weight:700;font-size:.85rem;margin-bottom:12px}
+.extra .card{box-shadow:6px 6px 0 var(--sun)!important}
+.chk{border:2.5px solid var(--line);border-radius:12px;padding:10px 14px;margin:0;display:flex;flex-wrap:wrap;gap:6px 18px}
+.chk legend{font-weight:700;font-size:.9rem;padding:0 6px}
+.chk label{font-weight:500;display:flex;gap:8px;align-items:center}
+.chk input{width:18px;height:18px;accent-color:var(--red);padding:0}
+.hint{font-size:.82rem;color:var(--muted)}
+/* form */
+.book{display:grid;grid-template-columns:1.15fr .85fr;gap:34px;align-items:start}
+@media(max-width:860px){.book{grid-template-columns:1fr}}
+form{background:var(--card);border:3px solid var(--line);border-radius:22px;padding:26px;box-shadow:8px 8px 0 var(--sun);display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.f{display:flex;flex-direction:column;gap:6px}.full{grid-column:1/-1}
+@media(max-width:520px){form{grid-template-columns:1fr}}
+label{font-weight:700;font-size:.9rem}
+input,select,textarea{font:inherit;color:var(--ink);background:var(--bg);border:2.5px solid var(--line);border-radius:12px;padding:11px 13px;width:100%}
+input:focus,select:focus,textarea:focus{outline:3px solid var(--sun);outline-offset:1px}
+input[aria-invalid="true"]{border-color:var(--red);background:var(--soft)}
+.err{color:var(--red);font-size:.82rem;font-weight:700;min-height:1em}
+.side .ticket{transform:rotate(1.5deg);animation:none}
+.tip{margin-top:26px;background:var(--sky);border:2.5px dashed var(--line);border-radius:16px;padding:16px;font-size:.93rem}
+
+footer{background:var(--ink);color:#fff;padding:54px 0 90px}
+footer .wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:26px}
+footer h3{color:var(--sun);margin-bottom:8px}
+footer p,footer a{color:#e8e8ec}
+footer small{display:block;margin-top:30px;color:#a0a0a8;text-align:center}
+.wa{position:fixed;right:calc(16px);bottom:calc(16px + var(--safe-b));z-index:60;width:60px;height:60px;border-radius:50%;background:#25D366;border:3px solid #141414;box-shadow:0 5px 0 #141414;display:grid;place-items:center;text-decoration:none;font-size:1.7rem}
+.wa:hover{transform:translateY(2px);box-shadow:0 3px 0 #141414}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.ticket{animation:none}}
+</style>
+</head>
+<body>
+
+<nav aria-label="Menu utama">
+  <a class="brand" href="#beranda"><i>YSS</i><span>Travel YSS</span></a>
+  <div class="links">
+    <a href="#beranda">Beranda</a>
+    <a href="#layanan">Layanan</a>
+    <a href="#armada">Armada</a>
+    <a href="#cara">Cara Pesan</a>
+    <a href="#tambahan">Tambahan</a>
+    <a href="#kontak">Kontak</a>
+    <a href="#pesan" class="cta">Pesan Sekarang</a>
+  </div>
+</nav>
+
+<header class="hero" id="beranda">
+  <div class="wrap">
+    <div>
+      <h1>Perjalanan <span class="red">aman</span>, hati tenang.</h1>
+      <p class="lead">Travel YSS melayani perjalanan dari Surabaya dengan mobil nyaman dan pengemudi berpengalaman. Isi form, kami konfirmasi lewat WhatsApp.</p>
+      <div class="btns">
+        <a class="btn pri" href="#pesan">Rencanakan perjalanan</a>
+        <a class="btn" href="#layanan">Lihat layanan</a>
+      </div>
+    </div>
+    <div class="ticket" aria-hidden="true">
+      <div class="top"><b>TRAVEL YSS</b><small>Aman • Nyaman • Terpercaya</small></div>
+      <div class="row">NAMA<span class="v">Budi Santoso</span></div>
+      <div class="row">TUJUAN<span class="v">Malang</span></div>
+      <div class="row">TGL<span class="v">Sabtu, 25 Okt 2026</span></div>
+      <div class="row">JAM<span class="v">07.00 WIB</span></div>
+      <p class="note">Contoh tiket pemesanan</p>
+    </div>
+  </div>
+</header>
+
+<section id="layanan">
+  <div class="wrap">
+    <div class="head"><h2>Layanan kami</h2><p>Pilih yang cocok dengan rencana perjalananmu. Detail dan harga bisa ditanyakan langsung lewat WhatsApp.</p></div>
+    <div class="grid">
+      <div class="card"><span class="ic">🚐</span><h3>Travel antar kota</h3><p>Berangkat terjadwal dari Surabaya ke berbagai kota tujuan, dengan nomor tempat duduk yang jelas.</p></div>
+      <div class="card"><span class="ic">🧳</span><h3>Carter mobil</h3><p>Sewa mobil untuk keluarga atau rombongan kecil sesuai tanggal dan jam yang kamu mau.</p></div>
+      <div class="card"><span class="ic">📍</span><h3>Antar jemput</h3><p>Dijemput di alamat yang kamu tentukan, jadi tidak perlu repot menuju titik kumpul.</p></div>
+      <div class="card"><span class="ic">💳</span><h3>Pembayaran DP</h3><p>Amankan kursi dengan DP, lalu lunasi sisanya. Semua tercatat di tiket.</p></div>
+      <div class="card"><span class="ic">🤫</span><h3>Perjalanan tenang</h3><p>Untuk penumpang yang ingin istirahat atau tidak banyak ditanya. Sopir menyapa seperlunya dan tidak mengajak mengobrol.</p></div>
+    </div>
+    <h3 class="sub">Pilih kendaraan sesuai kebutuhan</h3>
+    <div class="veh">
+      <div><span>🚗</span>Mobil<small>Untuk keluarga atau grup kecil</small></div>
+      <div><span>🚐</span>Elf<small>Rombongan menengah</small></div>
+      <div><span>🚌</span>Bis<small>Rombongan besar atau wisata</small></div>
+      <div><span>🏍️</span>Motor<small>Praktis untuk perjalanan dekat</small></div>
+      <div><span>✈️</span>Tiket pesawat<small>Kami bantu pesankan</small></div>
+      <div><span>💬</span>Lainnya<small>Ceritakan kebutuhanmu</small></div>
+    </div>
+    <p class="hint" style="margin-top:12px">Ketersediaan tiap kendaraan dikonfirmasi pengurus setelah kamu memesan.</p>
+    <div class="tip"><b>Belum termasuk biaya tol dan parkir.</b> Biaya tol dan parkir dibayar terpisah oleh penumpang selama perjalanan, di luar tarif yang disepakati.</div>
+  </div>
+</section>
+
+<section id="armada" class="alt">
+  <div class="wrap fleet">
+    <div class="car">
+      <svg viewBox="0 0 400 180" role="img" aria-label="Ilustrasi mobil">
+        <ellipse cx="200" cy="158" rx="170" ry="10" fill="#14141422"/>
+        <path d="M40 122c0-18 8-30 30-36l50-30c10-6 22-9 34-9h84c14 0 26 5 36 13l32 26c18 2 34 8 34 28v14c0 6-4 10-10 10H50c-6 0-10-4-10-10z" fill="#E8EAEE" stroke="#141414" stroke-width="5" stroke-linejoin="round"/>
+        <path d="M128 66l-32 26h72V60h-20c-8 0-14 2-20 6zm60-6v32h92l-26-22c-6-6-14-10-24-10z" fill="#9FD3FF" stroke="#141414" stroke-width="4" stroke-linejoin="round"/>
+        <rect x="42" y="112" width="24" height="10" rx="4" fill="#FFC72C" stroke="#141414" stroke-width="3"/>
+        <circle cx="105" cy="140" r="26" fill="#141414"/><circle cx="105" cy="140" r="11" fill="#E8EAEE"/>
+        <circle cx="305" cy="140" r="26" fill="#141414"/><circle cx="305" cy="140" r="11" fill="#E8EAEE"/>
+        <path d="M44 130h334" stroke="#E10B17" stroke-width="5" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div>
+      <h2>Armada yang nyaman</h2>
+      <p style="margin-top:10px;color:var(--muted)">Kami memakai mobil keluarga yang bersih dan terawat.</p>
+      <ul class="specs">
+        <li>Kabin luas untuk penumpang dan bagasi</li>
+        <li>AC dingin dengan kursi empuk</li>
+        <li>Pengemudi berpengalaman dan tertib berlalu lintas</li>
+        <li>Nomor tempat duduk dan nomor polisi tercatat di tiket</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="cara">
+  <div class="wrap">
+    <div class="head"><h2>Cara pesan</h2><p>Empat langkah, tanpa ribet.</p></div>
+    <div class="steps">
+      <div class="step"><h3>Isi form</h3><p>Tulis nama, tujuan, tanggal, dan jam berangkat.</p></div>
+      <div class="step"><h3>Kirim ke WhatsApp</h3><p>Data form otomatis jadi pesan siap kirim.</p></div>
+      <div class="step"><h3>Konfirmasi pengurus</h3><p>Kami cek jadwal dan tempat duduk, lalu membalas.</p></div>
+      <div class="step"><h3>Bayar DP &amp; berangkat</h3><p>Setelah DP, tiket dicatat dan perjalananmu aman.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="tambahan" class="sky extra">
+  <div class="wrap">
+    <div class="head"><span class="badge">Biaya di luar carter</span><h2>Layanan tambahan</h2><p>Mau perjalanan lebih santai? Tambahkan layanan makan di bawah. Harganya terpisah dari biaya carter dan menyesuaikan menu.</p></div>
+    <div class="grid">
+      <div class="card"><span class="ic">🍳</span><h3>Sarapan (breakfast)</h3><p>Sarapan sebelum berangkat, jadi perjalanan pagi tidak dimulai dengan perut kosong.</p></div>
+      <div class="card"><span class="ic">🍽️</span><h3>Makan di resto</h3><p>Berhenti makan di resto pilihan di tengah perjalanan. Kamu bisa minta rekomendasi kami.</p></div>
+      <div class="card"><span class="ic">🥤</span><h3>Snack &amp; minum</h3><p>Camilan dan air mineral disiapkan di mobil untuk teman di jalan.</p></div>
+    </div>
+    <p class="hint" style="margin-top:14px">Pilih layanan ini di form pemesanan. Pengurus akan mengirim rincian harganya lewat WhatsApp.</p>
+  </div>
+</section>
+
+<section id="pesan" class="alt">
+  <div class="wrap">
+    <div class="head"><h2>Rencanakan perjalananmu</h2><p>Isi data di bawah. Tiket di samping ikut berubah, dan pesanmu terkirim lewat WhatsApp.</p></div>
+    <div class="book">
+      <form id="f" novalidate>
+        <div class="f"><label for="nama">Nama</label><input id="nama" name="nama" autocomplete="name" required><span class="err" data-for="nama"></span></div>
+        <div class="f"><label for="wa">Nomor WhatsApp</label><input id="wa" name="wa" type="tel" inputmode="tel" autocomplete="tel" placeholder="08xx-xxxx-xxxx" required><span class="err" data-for="wa"></span></div>
+        <div class="f full"><label for="tujuan">Tujuan</label><input id="tujuan" name="tujuan" placeholder="Contoh: Malang, Bandara Juanda" required><span class="err" data-for="tujuan"></span></div>
+        <div class="f full"><label for="jemput">Alamat jemput</label><input id="jemput" name="jemput" placeholder="Alamat lengkap atau patokan"></div>
+        <div class="f full"><label for="veh">Jenis kendaraan</label>
+          <select id="veh" name="veh"><option>Mobil</option><option>Elf</option><option>Bis</option><option>Motor</option><option>Tiket pesawat</option><option>Lainnya / belum tahu, mohon saran</option></select></div>
+        <div class="f"><label for="tgl">Tanggal berangkat</label><input id="tgl" name="tgl" type="date" required><span class="err" data-for="tgl"></span></div>
+        <div class="f"><label for="jam">Jam berangkat</label><input id="jam" name="jam" type="time" required><span class="err" data-for="jam"></span></div>
+        <div class="f"><label for="pnp">Jumlah penumpang</label>
+          <select id="pnp" name="pnp"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option></select></div>
+        <div class="f"><label for="dp">Rencana DP (Rp)</label><input id="dp" name="dp" inputmode="numeric" placeholder="Boleh dikosongkan"></div>
+        <fieldset class="chk full"><legend>Layanan tambahan (biaya di luar carter)</legend>
+          <label><input type="checkbox" name="add" value="Sarapan"> Sarapan</label>
+          <label><input type="checkbox" name="add" value="Makan di resto"> Makan di resto</label>
+          <label><input type="checkbox" name="add" value="Snack &amp; minum"> Snack &amp; minum</label>
+        </fieldset>
+        <fieldset class="chk full"><legend>Preferensi perjalanan</legend>
+          <label><input type="checkbox" id="tenang" name="tenang"> Perjalanan tenang (sopir tidak banyak bertanya)</label>
+        </fieldset>
+        <div class="f full"><label for="cat">Catatan</label><textarea id="cat" name="cat" rows="3" placeholder="Bawa banyak koper, ada anak kecil, dll."></textarea></div>
+        <div class="full"><button class="btn pri" type="submit">Kirim lewat WhatsApp</button></div>
+      </form>
+      <div class="side">
+        <div class="ticket">
+          <div class="top"><b>TRAVEL YSS</b><small>Tiket pemesanan</small></div>
+          <div class="row">NAMA<span class="v" id="p-nama"></span></div>
+          <div class="row">TUJUAN<span class="v" id="p-tujuan"></span></div>
+          <div class="row">KENDARAAN<span class="v" id="p-veh">Mobil</span></div>
+          <div class="row">TGL<span class="v" id="p-tgl"></span></div>
+          <div class="row">JAM<span class="v" id="p-jam"></span></div>
+          <div class="row">PENUMPANG<span class="v" id="p-pnp">1</span></div>
+          <div class="row">DP<span class="v" id="p-dp"></span></div>
+          <div class="row">TAMBAHAN<span class="v" id="p-add"></span></div>
+          <p class="note">Nomor tempat duduk &amp; nomor polisi diisi pengurus</p>
+        </div>
+        <div class="tip">Form ini membuka WhatsApp dengan pesan yang sudah terisi. <b>Pesanan baru terkirim setelah kamu menekan tombol kirim di WhatsApp.</b> Pesananmu baru pasti setelah pengurus membalas.<br><br><b>Catatan:</b> tarif belum termasuk biaya tol dan parkir.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="kontak">
+  <div class="wrap">
+    <div><h3>Travel YSS</h3><p>Aman • Nyaman • Terpercaya</p></div>
+    <div><h3>Telepon / WhatsApp</h3><p><a href="https://wa.me/6289604192173">0896-0419-2173</a></p></div>
+    <div><h3>Media sosial</h3><p>@drivermuda</p></div>
+    <div><h3>Alamat</h3><p>Jl. Babatan Tengah No. 09<br>Babatan Wiyung, Surabaya</p></div>
+  </div>
+  <div class="wrap"><small>© 2026 Travel YSS</small></div>
+</footer>
+
+<a class="wa" href="https://wa.me/6289604192173" target="_blank" rel="noopener" aria-label="Chat WhatsApp Travel YSS">💬</a>
+
+<script>
+(function(){
+  var NO="6289604192173";
+  var $=function(i){return document.getElementById(i)};
+  var map={nama:"p-nama",tujuan:"p-tujuan",jam:"p-jam",pnp:"p-pnp",veh:"p-veh"};
+  function adds(){return [].slice.call(document.querySelectorAll('input[name="add"]:checked')).map(function(c){return c.value})}
+  function fmtDate(v){if(!v)return"";var d=new Date(v+"T00:00:00");return d.toLocaleDateString("id-ID",{weekday:"long",day:"numeric",month:"short",year:"numeric"})}
+  function fmtRp(v){var n=String(v).replace(/\D/g,"");return n?"Rp. "+Number(n).toLocaleString("id-ID"):""}
+  function sync(){
+    Object.keys(map).forEach(function(k){$(map[k]).textContent=$(k).value});
+    $("p-tgl").textContent=fmtDate($("tgl").value);
+    $("p-dp").textContent=fmtRp($("dp").value);
+    $("p-add").textContent=adds().join(", ");
+  }
+  $("f").addEventListener("input",sync);
+  $("tgl").min=new Date().toISOString().slice(0,10);
+
+  var msgs={nama:"Nama wajib diisi.",wa:"Nomor WhatsApp wajib diisi.",tujuan:"Tujuan wajib diisi.",tgl:"Pilih tanggal berangkat.",jam:"Pilih jam berangkat."};
+  $("f").addEventListener("submit",function(e){
+    e.preventDefault();
+    var ok=true,first=null;
+    Object.keys(msgs).forEach(function(k){
+      var el=$(k),bad=!el.value.trim();
+      el.setAttribute("aria-invalid",bad);
+      document.querySelector('[data-for="'+k+'"]').textContent=bad?msgs[k]:"";
+      if(bad){ok=false;if(!first)first=el}
+    });
+    if(!ok){first.focus();return}
+    var t="Halo Travel YSS, saya ingin memesan perjalanan.\n\n"+
+      "Nama: "+$("nama").value.trim()+"\n"+
+      "No. WhatsApp: "+$("wa").value.trim()+"\n"+
+      "Tujuan: "+$("tujuan").value.trim()+"\n"+
+      "Alamat jemput: "+($("jemput").value.trim()||"-")+"\n"+
+      "Tanggal berangkat: "+fmtDate($("tgl").value)+"\n"+
+      "Jam berangkat: "+$("jam").value+"\n"+
+      "Kendaraan: "+$("veh").value+"\n"+
+      "Jumlah penumpang: "+$("pnp").value+"\n"+
+      "Layanan tambahan (di luar carter): "+(adds().join(", ")||"-")+"\n"+
+      "Rencana DP: "+(fmtRp($("dp").value)||"-")+"\n"+
+      "Perjalanan tenang: "+($("tenang").checked?"Ya, mohon sopir tidak banyak bertanya":"Tidak")+"\n"+
+      "Catatan: "+($("cat").value.trim()||"-");
+    window.open("https://wa.me/"+NO+"?text="+encodeURIComponent(t),"_blank","noopener");
+  });
+
+  var links=[].slice.call(document.querySelectorAll(".links a"));
+  var secs=["beranda","layanan","armada","cara","tambahan","pesan","kontak"].map($);
+  if("IntersectionObserver" in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(en){
+      if(en.isIntersecting){links.forEach(function(a){a.classList.toggle("on",a.getAttribute("href")==="#"+en.target.id)})}
+    })},{rootMargin:"-45% 0px -50% 0px"});
+    secs.forEach(function(s){io.observe(s)});
+  }
+})();
+</script>
+</body>
+</html>
